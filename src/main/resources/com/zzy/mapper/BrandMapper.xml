@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzy.mapper.BrandMapper">
+    <resultMap id="resultMap" type="com.zzy.pojo.Brand">
+        <result column="brand_name" property="brandName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+
+    <insert id="addBrand" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        values (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+    </insert>
+
+    <delete id="deleteByIds">
+        delete
+        from tb_brand
+        where <foreach item="id" collection="ids" open="id in (" separator="," close=")">
+        #{id}
+    </foreach> ;
+    </delete>
+
+    <select id="selectByCondition" resultMap="resultMap">
+        select *
+        from tb_brand
+        <where>
+            <if test="brandName != '' and brandName != null">
+                brand_name like #{brandName}
+            </if>
+            <if test="companyName != '' and companyName != null">
+                and company_name like #{companyName}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+        limit  #{beginInd}, #{pageSize};
+    </select>
+
+    <select id="conditionCount" resultType="int">
+        select count(*)
+        from tb_brand
+        <where>
+            <if test="brandName != '' and brandName != null">
+                brand_name like #{brandName}
+            </if>
+            <if test="companyName != '' and companyName != null">
+                and company_name like #{companyName}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+    <select id="asc" resultMap="resultMap">
+        select *
+        from tb_brand
+        order by ordered asc
+        limit #{beginInd}, #{pageSize};
+    </select>
+    <select id="desc" resultMap="resultMap">
+        select *
+        from tb_brand
+        order by ordered desc
+        limit #{beginInd}, #{pageSize};
+    </select>
+
+    <!--arg0代表传入的对象-->
+    <select id="limitSortAsc" resultMap="resultMap">
+        select *
+        from tb_brand
+        <where>
+            <if test="arg0.brandName != '' and arg0.brandName != null">
+                brand_name like #{arg0.brandName}
+            </if>
+            <if test="arg0.companyName != '' and arg0.companyName != null">
+                and company_name like #{arg0.companyName}
+            </if>
+            <if test="arg0.status != null">
+                and status = #{arg0.status}
+            </if>
+        </where>
+        order by ordered asc
+        limit  #{beginInd}, #{arg0.pageSize};
+    </select>
+
+    <select id="limitSortDesc" resultMap="resultMap">
+        select *
+        from tb_brand
+        <where>
+            <if test="arg0.brandName != '' and arg0.brandName != null">
+                brand_name like #{arg0.brandName}
+            </if>
+            <if test="arg0.companyName != '' and arg0.companyName != null">
+                and company_name like #{arg0.companyName}
+            </if>
+            <if test="arg0.status != null">
+                and status = #{arg0.status}
+            </if>
+        </where>
+        order by ordered desc
+        limit  #{beginInd}, #{arg0.pageSize};
+    </select>
+
+</mapper>

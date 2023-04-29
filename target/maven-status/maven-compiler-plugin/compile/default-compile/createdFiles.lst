@@ -1,0 +1,11 @@
+com\zzy\mapper\BrandMapper.class
+com\zzy\pojo\Brand.class
+com\zzy\pojo\BrandInfo.class
+com\zzy\web\servlet\BaseServlet.class
+com\zzy\service\BrandService.class
+com\zzy\util\SqlSessionFactoryUtil.class
+com\zzy\web\servlet\old\AddBrandServlet.class
+com\zzy\web\servlet\BrandServlet.class
+com\zzy\web\servlet\old\SelectAllBrandServlet.class
+com\zzy\service\impl\BrandServiceImpl.class
+com\zzy\pojo\PageBean.class

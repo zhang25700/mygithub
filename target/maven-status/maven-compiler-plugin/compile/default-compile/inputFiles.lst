@@ -1,0 +1,11 @@
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\web\servlet\old\AddBrandServlet.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\pojo\Brand.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\util\SqlSessionFactoryUtil.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\mapper\BrandMapper.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\web\servlet\BaseServlet.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\web\servlet\old\SelectAllBrandServlet.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\service\impl\BrandServiceImpl.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\web\servlet\BrandServlet.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\pojo\BrandInfo.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\service\BrandService.java
+E:\JavaWeb\web-demo\brand-case\src\main\java\com\zzy\pojo\PageBean.java
