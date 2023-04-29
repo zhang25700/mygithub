@@ -21,6 +21,7 @@
     </foreach> ;
     </delete>
 
+
     <select id="selectByCondition" resultMap="resultMap">
         select *
         from tb_brand
